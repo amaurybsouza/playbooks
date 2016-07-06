@@ -4,7 +4,7 @@ os:
 install:
     - sudo pip install --quiet --upgrade pip setuptools pyopenssl ndg-httpsclient pyasn1
     - sudo pip install --quiet ansible
-    - sudo pip install --quiet jinja2
+    - sudo pip install --quiet paramiko==1.10 Jinja2==2.2
 
 before_script:
     - rm -rf ~/.vim
