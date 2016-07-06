@@ -2,11 +2,11 @@ os:
     - osx
 
 install:
-    - sudo pip install --quiet --upgrade pip
-    - sudo pip install --quiet --upgrade setuptools ansible
+    - sudo pip install --quiet --upgrade pip setuptools pyopenssl ndg-httpsclient pyasn1
+    - sudo pip install --quiet ansible
 
 before_script:
     - rm -rf ~/.vim
     - cp group_vars/workstation.example group_vars/workstation
 
-script: ansible-playbook workstation.yml -vv
+script: sudo ansible-playbook workstation.yml -vv
