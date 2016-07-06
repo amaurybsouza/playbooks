@@ -4,9 +4,14 @@ os:
 install:
     - sudo pip install --quiet --upgrade pip setuptools pyopenssl ndg-httpsclient pyasn1
     - sudo pip install --quiet ansible
+    - sudo pip install --quiet jinja2
 
 before_script:
     - rm -rf ~/.vim
     - cp group_vars/workstation.example group_vars/workstation
 
 script: sudo ansible-playbook workstation.yml -vv
+
+cache:
+  directories:
+    - $HOME/.cache/pip
