@@ -2,7 +2,7 @@ os:
     - osx
 
 install:
-    - sudo pip install ansible
+    - sudo pip install -U setuptools ansible
 
 before_script:
     - rm -rf ~/.vim
