@@ -11,3 +11,6 @@
 - name: update homebrew and its packages
   homebrew: update_homebrew=yes upgrade_all=yes
   when: brew_present
+
+- name: install latest openssl
+  homebrew: name=openssl state=latest
