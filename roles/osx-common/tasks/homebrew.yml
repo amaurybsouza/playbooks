@@ -14,3 +14,6 @@
 
 - name: install latest openssl
   homebrew: name=openssl state=latest
+
+- name: be sure openssl is linked
+  homebrew: name=openssl state=linked
