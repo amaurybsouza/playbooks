@@ -16,4 +16,6 @@
   homebrew: name=openssl state=latest
 
 - name: be sure openssl is linked
-  homebrew: name=openssl state=linked
+  shell: 'brew link --force openssl'
+  register: openssl_link_output
+  changed_when: '"Already linked" not in openssl_link_output.stdout'
