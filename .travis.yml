@@ -10,7 +10,7 @@ before_script:
     - rm -rf ~/.vim
     - cp group_vars/workstation.example group_vars/workstation
 
-script: sudo ansible-playbook workstation.yml -vv
+script: ansible-playbook workstation.yml -vv
 
 cache:
   directories:
