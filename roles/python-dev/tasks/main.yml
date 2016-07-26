@@ -1,9 +1,21 @@
 - name: be sure python2 is installed
   homebrew: name=python state=latest
+  environment:
+    EXTRA_CFLAGS: "-I/opt/local/include"
+    EXTRA_CXXFLAGS: "-I/opt/local/include"
+    EXTRA_LDFLAGS: "-L/opt/local/lib"
 
 - name: be sure python3 is installed
   homebrew: name=python3 state=latest
+  environment:
+    EXTRA_CFLAGS: "-I/opt/local/include"
+    EXTRA_CXXFLAGS: "-I/opt/local/include"
+    EXTRA_LDFLAGS: "-L/opt/local/lib"
 
 - name: be sure global pip packages are installed
   pip: name={{ item }} extra_args="--user" state=latest
   with_items: global_pip_packages
+  environment:
+    EXTRA_CFLAGS: "-I/opt/local/include"
+    EXTRA_CXXFLAGS: "-I/opt/local/include"
+    EXTRA_LDFLAGS: "-L/opt/local/lib"

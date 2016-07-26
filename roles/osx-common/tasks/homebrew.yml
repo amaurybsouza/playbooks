@@ -17,5 +17,5 @@
 
 - name: be sure openssl is linked
   shell: 'brew link --force openssl'
-  register: openssl_link_output
-  changed_when: '"Already linked" not in openssl_link_output.stdout'
+  register: openssl_link
+  changed_when: '"Already linked" not in openssl_link.stdout'
