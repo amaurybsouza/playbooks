@@ -8,6 +8,10 @@
   shell: ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
   when: brew_present|failed
 
+- name: update homebrew and its packages
+  homebrew: update_homebrew=yes
+  when: brew_present
+
 - name: install latest openssl
   homebrew: name=openssl state=latest
 
